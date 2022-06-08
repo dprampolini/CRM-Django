@@ -85,19 +85,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crm_main.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_shop', 
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+from crm_main.local_settings import DATABASES
 
 
 # Password validation
@@ -148,4 +136,9 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Where are you redirected after login?
 LOGIN_REDIRECT_URL = 'dashboard'
+
+# Setup to use email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
