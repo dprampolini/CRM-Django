@@ -51,6 +51,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOCAL_APPS = [
     'apps.common',
     'apps.userprofile',
+    'apps.emailer',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -139,6 +140,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Where are you redirected after login?
 LOGIN_REDIRECT_URL = 'dashboard'
 
-# Setup to use email
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# This display the email in logs
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 
