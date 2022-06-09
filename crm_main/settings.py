@@ -138,8 +138,4 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Where are you redirected after login?
-LOGIN_REDIRECT_URL = 'dashboard'
-
-# This display the email in logs
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
-
+LOGIN_REDIRECT_URL = 'dashboard' 
