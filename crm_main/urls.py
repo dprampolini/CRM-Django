@@ -16,13 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.common.forms import SignUpForm
+from apps.emailer.views import SendFormEmail
 
 from apps.common.views import HomeView, SignUpView, DashboardView
+from django.views.generic import TemplateView
 
 from django.contrib.auth import views as auth_views
 
+from django.core.mail import send_mail  
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('email/', TemplateView.as_view(template_name="email.html"), name='email'),
+    path('send-form-email/', SendFormEmail.as_view(), name='send_email'),
 
     path('' , HomeView.as_view(), name='home'),
     path('register/', SignUpView.as_view(), name='register'),
@@ -43,8 +50,8 @@ urlpatterns = [
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name='common/password-reset/password_reset_form.html',
-             subject_template_name='commons/password-reset/password_reset_subject.txt',
-             email_template_name='commons/password-reset/password_reset_email.html',
+             subject_template_name='common/password-reset/password_reset_subject.txt',
+             email_template_name='common/password-reset/password_reset_email.html',
              # success_url='/login/'
          ),
          name='password_reset'),
