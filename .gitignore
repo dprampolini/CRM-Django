@@ -1,1 +1,5 @@
 crm_main/local_settings.py
+crm_main/__pycache__
+apps/common/__pycache__/
+apps/emailer/__pycache__/
+apps/userprofile/__pycache__/
