@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from apps.common.forms import SignUpForm
+from django.urls import path, include
+
 from apps.emailer.views import SendFormEmail
 
-from apps.common.views import HomeView, SignUpView, DashboardView
+from apps.common.views import HomeView, SignUpView, DashboardView, ProfileUpdateView, ProfileView
+
 from django.views.generic import TemplateView
 
 from django.contrib.auth import views as auth_views
@@ -30,6 +31,9 @@ urlpatterns = [
 
     path('email/', TemplateView.as_view(template_name="email.html"), name='email'),
     path('send-form-email/', SendFormEmail.as_view(), name='send_email'),
+
+    path('profile-update/', ProfileUpdateView.as_view(), name='profile-update'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 
     path('' , HomeView.as_view(), name='home'),
     path('register/', SignUpView.as_view(), name='register'),
@@ -72,3 +76,9 @@ urlpatterns = [
          name='password_reset_complete'),
     # End Forget-Password Block
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

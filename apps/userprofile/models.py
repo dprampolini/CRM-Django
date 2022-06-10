@@ -1,3 +1,5 @@
+from distutils.command.upload import upload
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -7,9 +9,10 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE) #Ereditarietà da User e in on_delete si comporta come Model
     #Seguono i campi che si vogliono aggiungere al modello User già esistente
-    bio = models.TextField(max_length=500, blank=True)
-    phone_number = models.CharField(max_length=12, blank=True)
-    birth_date = models.DateField(null=True, blank=True)
+    bio = models.TextField(max_length=500, blank=True, default=None)
+    phone_number = models.CharField(max_length=12, blank=True, default=None)
+    birth_date = models.DateField(null=True, blank=True, default=None)
+    profile_image = models.ImageField(default='default-avatar.png', upload_to='users/', null=True, blank=True)
 
     #Funzione che definisce come si visualizza il Profilo dalla console admin
     def __str__(self):

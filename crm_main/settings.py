@@ -16,9 +16,6 @@ from pathlib import Path
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-import sys
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -44,6 +41,7 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'crispy_forms',
+    'django_cleanup',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -86,7 +84,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crm_main.wsgi.application'
 
-from crm_main.local_settings import DATABASES
+try:
+    from crm_main.local_settings import *
+except ImportError:
+    print('Exception during crm_main.local_settings import')
 
 
 # Password validation
