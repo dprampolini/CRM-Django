@@ -23,8 +23,7 @@ from apps.common.views import HomeView, SignUpView, DashboardView, ProfileUpdate
 from django.views.generic import TemplateView
 
 from django.contrib.auth import views as auth_views
-
-from django.core.mail import send_mail  
+ 
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -15,11 +15,12 @@ class SendFormEmail(View):
         # Send Email
         send_mail(
             'Subject - Django Email Testing', 
-            'Hello ' + name + ',\n' + message, 
+            message+'\nKind regards,\n'+name, 
             'd_prampolini@hotmail.it', # Admin
             [
                 email,
-            ]
+            ],
+            fail_silently=False,
         ) 
 
         # Redirect to same page after form submit
