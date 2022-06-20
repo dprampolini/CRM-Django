@@ -12,6 +12,7 @@ Following [Study Gyaang](https://studygyaan.com/django)'s tutorial create a CRM 
  - [Django Configuration](https://studygyaan.com/django/django-best-practice-configuring-settings-file)
  - [Free Bootstrap template website](https://startbootstrap.com/)
  - [Emailer Creation](https://studygyaan.com/django/how-to-send-email-in-django)
+ - [Timepicker](https://trentrichardson.com/examples/timepicker)
 
  
 
