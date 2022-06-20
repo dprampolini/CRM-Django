@@ -10,6 +10,7 @@ from django.urls import reverse_lazy
 from .forms import UserForm, ProfileForm, SignUpForm
 from django.contrib.auth.models import User
 from apps.userprofile.models import Profile
+
 from django.contrib import messages
 
 # Create your views here.
@@ -46,7 +47,7 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile is updated successfully!', extra_tags='alert alert-primary')
+            messages.info(request, 'Your profile is updated successfully!')
             return HttpResponseRedirect(reverse_lazy('profile'))
 
         context = self.get_context_data(
