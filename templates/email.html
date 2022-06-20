@@ -1,3 +1,5 @@
+{% load static %}
+
 <html>
 
 <head>
@@ -16,15 +18,6 @@
 
                 <form id="contact-form" action="{% url 'send_email' %}" role="form">
                     {% csrf_token %}
-                    <div class="messages">
-                        {% if messages %}
-                        {% for message in messages %}
-                        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
-                            {{ message }}
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                    </div>
                     <div class="controls">
                         <div class="row">
                             <div class="col-md-6">
@@ -66,6 +59,16 @@
             </div>
         </div>
     </div>
+    {% include 'common/messages.html' %}
 </body>
+
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script>
+    setTimeout(function(){
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 2000)
+</script>
 
 </html> 
