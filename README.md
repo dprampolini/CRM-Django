@@ -48,7 +48,6 @@ Configure the local_settings.py file with your database and email settings.
 
 Run the following commands to make the migrations and populate the database:
 ```bash
-  python manage.py makemigration
   python manage.py migrate
 ```
 
