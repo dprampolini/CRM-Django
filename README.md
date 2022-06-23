@@ -29,6 +29,15 @@ In the project folder run the following commands to install the virtual environm
   .\env\Scripts\activate
 ```
 
+Or in alternative run:
+```bash
+  mkvirtualenv --python=/usr/bin/<python_version> <virtualenv_name>
+```
+Replace <python_version> with the python version of your environment, for example:
+<python_version> = python3.9
+Replace <virtualenv_name> with the name of the virtual environment, for example:
+<virtualenv_name> = crm-virtualenv
+
 In the virtual environment shell run the following command to install python dependancies:
 ```bash
   pip install -r requirements.txt
