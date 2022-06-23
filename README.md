@@ -35,6 +35,7 @@ Or in alternative run:
 ```
 Replace <python_version> with the python version of your environment, for example:
 <python_version> = python3.9
+
 Replace <virtualenv_name> with the name of the virtual environment, for example:
 <virtualenv_name> = crm-virtualenv
 
