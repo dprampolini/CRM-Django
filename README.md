@@ -15,6 +15,7 @@ http://dprampolini.pythonanywhere.com/
  - [Free Bootstrap template website](https://startbootstrap.com/)
  - [Emailer Creation](https://studygyaan.com/django/how-to-send-email-in-django)
  - [Timepicker](https://trentrichardson.com/examples/timepicker)
+ - [Free hosting (for development and test purpose)](https://www.pythonanywhere.com/)
 
  
 
