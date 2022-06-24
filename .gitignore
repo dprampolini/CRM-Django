@@ -3,3 +3,4 @@ crm_main/__pycache__
 apps/common/__pycache__/
 apps/emailer/__pycache__/
 apps/userprofile/__pycache__/
+*.pyc
